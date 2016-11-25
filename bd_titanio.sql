@@ -175,6 +175,7 @@ INSERT INTO `tbl_usuarios` (`usu_id`, `usu_usuario`, `usu_pwd`, `usu_categoria`)
 (2, 'sergio.jimenez', '123', 'administrador'),
 (3, 'agnes.plans', 'admin', 'administrador'),
 (4, 'ignasi.romero', '123', 'profesor');
+(6, 'miguel.tello', '098', 'administrador');
 
 --
 -- Índices para tablas volcadas
