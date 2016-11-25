@@ -41,7 +41,7 @@ include "includes/login.php";
                 <h1> <font face="Helvetica" COLOR="#0079BA">Administrar Usuarios</font></h1>
             </div>
             <div class="enc_3">
-                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?></H4> </span></font>
+                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?> (<a class='logout' href="includes/cerrar.php">Salir</a>)</H4> </span></font>
             </div>
             
     </div>
@@ -50,56 +50,42 @@ include "includes/login.php";
     		    
 	    <?php
 
-	   
+		$resultado=mysqli_query($conexion, "SELECT * FROM tbl_usuarios");
+		
 
-
-	    	echo "<table class='menu'>";
+		echo "<table class='menu'>";
 			echo "<th> <a class='menu' href='admin_nuevousu.php'>
 			NUEVO USUARIO</a> / <a class='menu2' href='admin.php'>VOLVER AL ADMINISTRADOR DE RECURSOS</a>
 			</th>";
 			echo "</table>";
-
 
 			echo "<table class='menu'>";
 			echo "<tr>
 				<th>USUARIOS:</th>
 				<th>OPCIONES:</th>
 				</tr>";
+
+		if (mysqli_num_rows($resultado) != 0){
+			while ($nombres = mysqli_fetch_array($resultado)) {
+			$nombre = $nombres['usu_usuario'];
+
+
 			
 				echo "<tr>
-				<td> david.marin </td>
-				<td> <a class='menu2' href='admin_modusu.php'>EDITAR</a> / <a class='menu' href='admin_elimusu.proc.php'>ELIMINAR</a> </td>
+				<td> $nombre </td>
+				<td> <a class='menu2' href='admin_modusu.php?modificar_este_usuario=$nombre'>EDITAR</a> / <a class='menu' href='admin_elimusu.php?eliminar_este_usuario=$nombre'>ELIMINAR</a> </td>
 				
 				</tr>";
+			
 
-				echo "<tr>
-				<td> agnes.plans </td>
-				<td> <a class='menu2' href='admin_modusu.php'>EDITAR</a> / <a class='menu' href='admin_elimusu.proc.php'>ELIMINAR</a> </td>
-				
-				</tr>";
+	
 
-				echo "<tr>
-				<td> sergio.jimenez </td>
-				<td> <a class='menu2' href='admin_modusu.php'>EDITAR</a> / <a class='menu' href='admin_elimusu.proc.php'>ELIMINAR</a> </td>
-				
-				</tr>";
+			//echo "$nombre";
+		}
+		}
+		
+		echo "</table>";
 
-				echo "<tr>
-				<td> ignasi.romero </td>
-				<td> <a class='menu2' href='admin_modusu.php'>EDITAR</a> / <a class='menu' href='admin_elimusu.proc.php'>ELIMINAR</a> </td>
-				
-				</tr>";
-			//echo "<th></th>";
-
-			//echo "<td>" . $recurso['usu_usuario'] . "</td>";
-						
-					
-					
-
-					
-				
-
-	echo "</table>";
 
 		?>
 	    

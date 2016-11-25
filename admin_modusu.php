@@ -41,7 +41,7 @@ include "includes/login.php";
                 <h1> <font face="Helvetica" COLOR="#0079BA">Modificar Usuario</font></h1>
             </div>
             <div class="enc_3">
-                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?></H4> </span></font>
+                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?> (<a class='logout' href="includes/cerrar.php">Salir</a>)</H4> </span></font>
             </div>
             
     </div>
@@ -50,51 +50,49 @@ include "includes/login.php";
     		    
 	    <?php
 
-	   // HAY QUE PENSAR LA SENTENCIA SQL PARA DEFINIR LA VARIABLE $USERNAME
-
-	    // HACER UPDATE PA LA BASE DE DATOS/TABLA USUARIO PARA CAMBIAR "USU_USUARIO" Y "USU_PWD"
+	   
 
 	    	echo "<table class='menu'>";
 			echo "<th> <a class='menu2' href='admin_usuarios.php'>VOLVER AL ADMINISTRADOR DE USUARIOS</a> 
 			</th>";
-			echo "</table>";
-
-			echo "<table>";
-			echo "<th> Estás modificando el usuario:  'dolar-username' </th>";
-			echo "</table>";
-
-
-			echo "<table class='menu'>";
-			echo "<tr>
-				<th>OPCIONES:</th>
-				<th>ACTUALIZAR:</th>
-				</tr>";
-			
-				echo "<tr>
-				<td> Cambiar nombre de usuario de: 'dolar-username' </td>
-				<td> Nuevo usuario: 'campo - name:usu_usuario'</td>
-				
-				</tr>";
-
-				echo "<tr>
-				<td> Cambiar contraseña de: 'dolar-username' </td>
-				<td> Nueva contraseña: 'campo - name:usu_pwd'</td>
-				
-				</tr>";
-
-				echo "<tr>
-				<td> </td>
-				<td> Botón enviar </td>
-				
-				</tr>";
-
-			//echo "<th></th>";
-
-			//echo "<td>" . $recurso['usu_usuario'] . "</td>";
-						
-	echo "</table>";				
+			echo "<tr>";
+			echo "<td>Estás modificando el usuario: $modificar_este_usuario</td>";
+			echo "</tr>";
+			echo "</table>";				
 
 		?>
+
+<div class="login-form">
+     <form action="admin_modusu.proc.php" method="post" accept-charset="utf-8">
+     	
+
+    	<div class="form-group ">
+       	<input type="text" class="form-control" name="nuevo_usu" placeholder="Nuevo usuario" id="username">
+       	<input type="hidden" name="nombre" value="<?php echo "$modificar_este_usuario" ?>">
+       	<i class="fa fa-user"></i>
+     	</div>
+     	<div class="form-group ">
+       	<input type="password" class="form-control" name="nueva_pwd" placeholder="Nueva contraseña" id="password">
+       	<i class="fa fa-lock"></i>
+     	</div>
+        
+      <div class="radio-categoria">  
+      <input type="radio" name="nueva_cat" value="profesor">Profesor
+      </div>
+
+      <div class="radio-categoria">  
+      <input type="radio" name="nueva_cat" value="administrador">Administrador
+      </div>
+
+
+        <br/>
+     	<input type="submit" class="log-btn" name="submit" value="MODIFICAR"></input>
+     </form>
+    
+</div>
+
+
+
 	    
     </div>
    

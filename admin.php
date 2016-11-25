@@ -43,7 +43,10 @@ include "includes/login.php";
                 <h1> <font face="Helvetica" COLOR="#0079BA">Administrar Recursos</font></h1>
             </div>
             <div class="enc_3">
-                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?></H4> </span></font>
+                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?> (<a class='logout' href="includes/cerrar.php">Salir</a>)</H4> </span>
+                <br/>
+                
+                </font>
             </div>
             
     </div>

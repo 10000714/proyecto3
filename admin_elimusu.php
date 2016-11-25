@@ -38,7 +38,7 @@ include "includes/login.php";
 			<img src="img/logo1.png">
 			</div>
 			<div class="enc_2">
-                <h1> <font face="Helvetica" COLOR="#0079BA">Nuevo Usuario</font></h1>
+                <h1> <font face="Helvetica" COLOR="#0079BA">Eliminar Usuario</font></h1>
             </div>
             <div class="enc_3">
                 <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?> (<a class='logout' href="includes/cerrar.php">Salir</a>)</H4> </span></font>
@@ -47,49 +47,45 @@ include "includes/login.php";
     </div>
 
     <div class="menu-usu">
-
-
+    		    
 	    <?php
 
 	   
 
-
 	    	echo "<table class='menu'>";
-			echo "<th> <a class='menu2' href='admin_usuarios.php'>VOLVER AL ADMINISTRADOR DE USUARIOS</a>
+			echo "<th> <a class='menu2' href='admin_usuarios.php'>VOLVER AL ADMINISTRADOR DE USUARIOS</a> 
 			</th>";
-      echo "</table>";
+			echo "<tr>";
+			echo "<td>Estás eliminando el usuario: $eliminar_este_usuario</td>";
+			echo "</tr>";
+			echo "</table>";				
 
 		?>
 
 <div class="login-form">
-     <form action="admin_nuevousu.proc.php" method="post" accept-charset="utf-8">
+     <form action="admin_elimusu.proc.php" method="post" accept-charset="utf-8">
+     	
+     <div class="radio-categoria-center">¿ESTÁS SEGURO?</div>
+     <br/>
      
-    	<div class="form-group ">
-       	<input type="text" class="form-control" name="username" placeholder="Usuario" id="username">
-        <i class="fa fa-user"></i>
-     	</div>
-     	<div class="form-group ">
-       	<input type="password" class="form-control" name="password" placeholder="Contraseña" id="password">
-       	<i class="fa fa-lock"></i>
-     	</div>
+    	<input type="hidden" name="nombre" value="<?php echo "$eliminar_este_usuario" ?>">
         
-      <div class="radio-categoria">  
-      <input type="radio" name="categoria" value="profesor">Profesor
-      </div>
-
-      <div class="radio-categoria">  
-      <input type="radio" name="categoria" value="administrador">Administrador
+      <div class="radio-categoria-center">  
+      <input type="radio" name="acepta" value="si">SI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="radio" name="acepta" value="no">NO
       </div>
 
 
         <br/>
-     	<input type="submit" class="log-btn" name="submit" value="REGISTRAR"></input>
+     	<input type="submit" class="log-btn" name="submit" value="ELIMINAR"></input>
      </form>
     
 </div>
-	
+
+
+
 	    
     </div>
-    
+   
  </body>
 </html>

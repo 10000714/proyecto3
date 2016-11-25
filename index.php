@@ -65,6 +65,8 @@ if(isset($login)){
         ?>
         <br/>
      <input type="submit" class="log-btn" name="submit" value="ENTRAR"></input>
+     <br/><br/>
+     <div class="radio-categoria-center">¿No tienes cuenta? <a class='registro' href="registro.php">Regístrate</a>.</div>
      </form>
     
    </div>

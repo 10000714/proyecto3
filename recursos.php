@@ -43,7 +43,7 @@ if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
                 <h1> <font face="Helvetica" COLOR="#0079BA">Administrar Recursos</font></h1>
             </div>
             <div class="enc_3">
-                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?></H4> </span></font>
+                <font face="Helvetica" COLOR="#0079BA"><span ria-hidden="true"><H4>USUARIO: <?php echo $_SESSION['username'];?> (<a class='logout' href="includes/cerrar.php">Salir</a>)</H4> </span></font>
             </div>
             
     </div>
@@ -107,6 +107,7 @@ if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
 				echo "<div class='boton'>";
 				if($recurso['rec_estado'] == "Disponible"){
 				echo '<button type="button"  class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')">Reservar</button>';
+
 				}else {
 					// echo '<button type="button" class="log-btn" name="submit"  onclick="insert_res(\''.$id. '\' , \''.$id_usu. '\')" disabled="true">Reservar</button>';
 
@@ -169,7 +170,7 @@ if(!isset($_SESSION['username']) || $_SESSION['categoria'] == 'administrador'){
 				echo "<td> <button type='button' class='log-btn' name='submit'  onclick='update_res(\"".$rec_id. "\" , \"".$res_id. "\")' >Devolución</button></td>";
 				echo "</tr>" ;
 				}else {
-					echo "<td> <button type='button' class='log-btn' name='submit'  onclick='update_res(\"".$rec_id. "\" , \"".$res_id. "\")' disabled='true'>Devolución</button></td>";
+					echo "<td> </td>";
 				echo "</tr>" ;
 
 
