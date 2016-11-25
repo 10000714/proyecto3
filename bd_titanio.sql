@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2016 a las 19:46:40
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.5.37
+-- Servidor: localhost
+-- Tiempo de generación: 25-11-2016 a las 15:15:14
+-- Versión del servidor: 10.1.16-MariaDB
+-- Versión de PHP: 5.6.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -127,7 +127,20 @@ INSERT INTO `tbl_reservas` (`res_id`, `usu_id`, `rec_id`, `res_finicio`, `res_ff
 (38, 1, 1, '2016-11-08 17:07:01', '2016-11-08 17:08:46'),
 (39, 2, 1, '2016-11-08 17:09:08', '2016-11-08 17:09:16'),
 (40, 2, 1, '2016-11-08 17:10:47', '2016-11-09 19:24:28'),
-(41, 1, 2, '2016-11-08 17:11:05', '2016-11-09 19:24:05');
+(41, 1, 2, '2016-11-08 17:11:05', '2016-11-09 19:24:05'),
+(42, 1, 14, '2016-11-22 18:40:03', '2016-11-22 18:41:02'),
+(43, 1, 8, '2016-11-22 18:41:05', '2016-11-22 18:41:11'),
+(44, 1, 16, '2016-11-22 18:41:08', '2016-11-22 18:41:12'),
+(45, 1, 1, '2016-11-22 19:20:51', '2016-11-22 19:20:57'),
+(46, 1, 2, '2016-11-22 19:20:51', '2016-11-22 19:20:58'),
+(47, 1, 6, '2016-11-22 19:20:52', '2016-11-22 19:20:59'),
+(48, 1, 5, '2016-11-22 19:20:53', '2016-11-22 19:20:55'),
+(49, 1, 2, '2016-11-22 22:14:18', '2016-11-22 22:14:25'),
+(50, 1, 2, '2016-11-22 23:41:59', '2016-11-22 23:42:02'),
+(51, 1, 1, '2016-11-24 19:56:58', '2016-11-24 19:57:15'),
+(52, 1, 2, '2016-11-24 19:56:59', '2016-11-24 19:57:12'),
+(53, 5, 14, '2016-11-25 00:32:48', '2016-11-25 00:32:51'),
+(54, 11, 15, '2016-11-25 00:33:55', '2016-11-25 00:33:56');
 
 -- --------------------------------------------------------
 
@@ -159,9 +172,9 @@ CREATE TABLE `tbl_usuarios` (
 
 INSERT INTO `tbl_usuarios` (`usu_id`, `usu_usuario`, `usu_pwd`, `usu_categoria`) VALUES
 (1, 'david.marin', '1234', 'profesor'),
-(2, 'sergio.jimenez', '12345', 'profesor'),
+(2, 'sergio.jimenez', '123', 'administrador'),
 (3, 'agnes.plans', 'admin', 'administrador'),
-(4, 'ignasi.romero', '123456', 'profesor');
+(4, 'ignasi.romero', '123', 'profesor');
 
 --
 -- Índices para tablas volcadas
@@ -215,7 +228,7 @@ ALTER TABLE `tbl_recursos`
 -- AUTO_INCREMENT de la tabla `tbl_reservas`
 --
 ALTER TABLE `tbl_reservas`
-  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `res_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 --
 -- AUTO_INCREMENT de la tabla `tbl_tipos`
 --
